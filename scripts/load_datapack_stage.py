@@ -72,8 +72,13 @@ def load_one_csv(conn, year, level, table_code, csv_path):
     cur.execute(f"DROP TABLE IF EXISTS {table_name}")
     cur.execute(f"CREATE TABLE {table_name} ({', '.join(col_defs)})")
 
+    # ABS uses '..' as the placeholder for suppressed/not-applicable cells
+    # (confirmed: the only non-numeric, non-empty token across all 687 DataPack
+    # CSVs) -- map it to SQL NULL during COPY.
     with open(csv_path, "r", encoding="utf-8-sig", newline="") as f:
-        cur.copy_expert(f"COPY {table_name} FROM STDIN WITH (FORMAT csv, HEADER true)", f)
+        cur.copy_expert(
+            f"COPY {table_name} FROM STDIN WITH (FORMAT csv, HEADER true, NULL '..')", f
+        )
 
     cur.execute(f"SELECT COUNT(*) FROM {table_name}")
     row_count = cur.fetchone()[0]
