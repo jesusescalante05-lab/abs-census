@@ -153,6 +153,10 @@ def load_one(conn, year, level):
     )
 
     cur = conn.cursor()
+    # census.value FK-references geo.region; clear dependent fact rows first so a
+    # boundary refresh is never blocked by stale references (they get reloaded by
+    # load_census_values.py afterward, same as a from-scratch run would do).
+    cur.execute("DELETE FROM census.value WHERE census_year = %s AND geo_level = %s", (year, level))
     cur.execute("DELETE FROM geo.region WHERE census_year = %s AND geo_level = %s", (year, level))
 
     insert_sql = """
