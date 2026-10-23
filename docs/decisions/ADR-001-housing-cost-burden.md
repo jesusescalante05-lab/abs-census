@@ -96,7 +96,7 @@ The `analysis.housing_stress_sa2` view must pass these checks:
 - Returns exactly **185** rows (all Greater Perth SA2s, including excluded ones with a `data_status`).
 - **165** rows with `rent_status = 'ok'` and a non-NULL `rent_burden`.
 - Every NULL `rent_burden` has `rent_status <> 'ok'`; every NULL `mortgage_burden` has `mortgage_status <> 'ok'`.
-- The count of `mortgage_status = 'ok'` is reported (expected 164).
+- The count of `mortgage_status = 'ok'` is reported, not asserted (measured: 164 on 2021 data; the one exclusion beyond the 20  `few_households` SA2s is Osborne Park Industrial, `few_mortgaged`).
 - Spot values match the Phase 1 exploration: Mandurah `rent_burden` = 0.300,
   Mosman Park – Peppermint Grove = 0.135.
 - No `rent_burden` or `mortgage_burden` equals 0.
