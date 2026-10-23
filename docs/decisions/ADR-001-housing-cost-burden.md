@@ -47,7 +47,7 @@ in the side panel.
 | R3 | `rent_burden` is NULL when `renting < 30` | A median from very few renters is unstable |
 | R4 | `mortgage_burden` is NULL when `mortgaged < 30` | Same reason, for mortgages |
 | R5 | Every division uses `NULLIF(denominator, 0)` | No division-by-zero errors |
-| R6 | A `data_status` column explains every NULL: `ok`, `few_households`, `few_renters`, `few_mortgaged` | The map and side panel can say *why* an area has no value |
+| R6 | Each primary indicator has its own status column explaining any NULL: `rent_status` (`ok`, `few_households`, `few_renters`) and `mortgage_status` (`ok`, `few_households`, `few_mortgaged`) | One row can have a valid rent burden and a missing mortgage burden (for example, Osborne Park Industrial); a single status cannot explain both |
 
 Expected effect: **165 SA2s** with a valid `rent_burden`; **20 SA2s** marked `few_households`
 (industrial estates, national parks, Perth Airport, Kings Park). At least one further SA2
@@ -58,7 +58,7 @@ Expected effect: **165 SA2s** with a valid `rent_burden`; **20 SA2s** marked `fe
 - Map classes: **quintiles** across valid Greater Perth SA2s (relative burden within Perth).
 - **0.30 is a reference line only**, in the legend and charts. It is not used as a stress threshold,
   because the ratio understates renters' burden (see limitations).
-- SA2s with `data_status <> 'ok'` are drawn in neutral grey, labelled with the reason.
+- SA2s with `“the displayed indicator’s status is not ok”` are drawn in neutral grey, labelled with the reason.
 
 ### Spatial statistics (input to Phase 3)
 
@@ -94,7 +94,9 @@ Expected effect: **165 SA2s** with a valid `rent_burden`; **20 SA2s** marked `fe
 The `analysis.housing_stress_sa2` view must pass these checks:
 
 - Returns exactly **185** rows (all Greater Perth SA2s, including excluded ones with a `data_status`).
-- **165** rows with `data_status = 'ok'` and a non-NULL `rent_burden`.
+- **165** rows with `rent_status = 'ok'` and a non-NULL `rent_burden`.
+- Every NULL `rent_burden` has `rent_status <> 'ok'`; every NULL `mortgage_burden` has `mortgage_status <> 'ok'`.
+- The count of `mortgage_status = 'ok'` is reported (expected 164).
 - Spot values match the Phase 1 exploration: Mandurah `rent_burden` = 0.300,
   Mosman Park – Peppermint Grove = 0.135.
 - No `rent_burden` or `mortgage_burden` equals 0.
