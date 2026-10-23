@@ -47,7 +47,7 @@ in the side panel.
 | R3 | `rent_burden` is NULL when `renting < 30` | A median from very few renters is unstable |
 | R4 | `mortgage_burden` is NULL when `mortgaged < 30` | Same reason, for mortgages |
 | R5 | Every division uses `NULLIF(denominator, 0)` | No division-by-zero errors |
-| R6 | Each primary indicator has its own status column explaining any NULL: `rent_status` (`ok`, `few_households`, `few_renters`) and `mortgage_status` (`ok`, `few_households`, `few_mortgaged`) | One row can have a valid rent burden and a missing mortgage burden (for example, Osborne Park Industrial); a single status cannot explain both |
+| R6 | Each primary indicator has its own status column explaining any NULL: `rent_status` (`ok`, `few_households`, `few_renters`, `no_median`) and `mortgage_status` (`ok`, `few_households`, `few_mortgaged`, `no_median`) | One row can have a valid rent burden and a missing mortgage burden (for example, Osborne Park Industrial); a single status cannot explain both, and a NULL median must be explained too |
 
 Expected effect: **165 SA2s** with a valid `rent_burden`; **20 SA2s** marked `few_households`
 (industrial estates, national parks, Perth Airport, Kings Park). At least one further SA2
