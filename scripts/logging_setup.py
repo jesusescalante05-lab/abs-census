@@ -11,7 +11,7 @@ LOGS_DIR = Path(__file__).resolve().parent.parent / "logs"
 def setup_logging(run_name):
     LOGS_DIR.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M")
-    log_path = LOGS_DIR / f"load_{timestamp}.log"
+    log_path = LOGS_DIR / f"{run_name}_{timestamp}.log"
 
     root = logging.getLogger()
     root.setLevel(logging.INFO)
