@@ -84,8 +84,25 @@ SELECT
     h.local_moran_i, h.local_moran_z, h.local_moran_p_sim, h.local_moran_quadrant, h.local_moran_class,
     h.knn_gi_star_class, h.knn_local_moran_class,
     h.gi_star_class_changed, h.local_moran_class_changed,
+    -- ADR-002 confidence class: agreement between queen and knn Gi* results.
+    CASE
+        WHEN h.gi_star_class IS NULL THEN 'not_analysed'                                   -- ADR-001 R2 exclusion
+        WHEN h.gi_star_class = 'hotspot'  AND h.knn_gi_star_class = 'hotspot'  THEN 'robust_hotspot'
+        WHEN h.gi_star_class = 'coldspot' AND h.knn_gi_star_class = 'coldspot' THEN 'robust_coldspot'
+        WHEN (h.gi_star_class = 'hotspot'  AND h.knn_gi_star_class = 'coldspot')
+          OR (h.gi_star_class = 'coldspot' AND h.knn_gi_star_class = 'hotspot') THEN 'conflicting'
+        WHEN h.gi_star_class = 'hotspot'  OR h.knn_gi_star_class = 'hotspot'  THEN 'possible_hotspot'
+        WHEN h.gi_star_class = 'coldspot' OR h.knn_gi_star_class = 'coldspot' THEN 'possible_coldspot'
+        ELSE 'not_significant'
+    END AS gi_star_confidence,
     s.geom
 FROM analysis.housing_stress_sa2 s
 LEFT JOIN latest_run lr ON true
 LEFT JOIN analysis.housing_stress_hotspots h
     ON h.region_code = s.region_code AND h.run_id = lr.run_id;
+
+COMMENT ON VIEW analysis.housing_stress_hotspots_latest IS
+    'Latest rent_burden hotspot-analysis run, one row per Greater Perth SA2 (all 185). '
+    'Implements docs/decisions/ADR-001-housing-cost-burden.md (indicator, scope, exclusions) '
+    'and docs/decisions/ADR-002-hotspot-method.md (weights, statistics, FDR, gi_star_confidence '
+    'classes). See the ADRs for formulas, methodology, and limitations.';
