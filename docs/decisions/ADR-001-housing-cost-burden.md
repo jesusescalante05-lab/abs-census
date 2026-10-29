@@ -79,6 +79,7 @@ Expected effect: **165 SA2s** with a valid `rent_burden`; **20 SA2s** marked `fe
    tables do not always agree for tiny areas (for example, national parks with 0 households but a
    median rent). Rules R2–R4 limit this.
 5. **Single year.** 2021 only. The 2021 Census was held during COVID-19 conditions.
+6. **Multipart SA2s.** Some SA2s include islands (Rottnest Island and Garden Island are parts of mainland SA2s). Island parts show the value of the whole SA2; they do not describe island residents.
 
 ## Alternatives considered
 
