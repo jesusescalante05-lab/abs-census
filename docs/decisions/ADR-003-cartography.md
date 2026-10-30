@@ -31,14 +31,17 @@ mesh block (MB 50077840000, 19.19 km²), which is correct ABS data.
 
 1. **Residential mask.** Analysed SA2s (`rent_status = 'ok'`) are drawn using only their 2021
    mesh blocks with category `Residential`.
-2. **Mainland rule.** Only mesh blocks inside the **largest polygon part** of their SA2 are drawn.
-   This is the same largest-part rule used for KNN weights in ADR-002. It removes island parts
-   (for example Rottnest Island) without naming them.
+2. **Main populated part rule.** Only mesh blocks inside the SA2's main populated part (ADR-002
+   Amendment 1: the part with the most residential mesh blocks, otherwise the largest by area) are
+   drawn. The original rule, "largest polygon part", selected Rottnest Island for Fremantle and was
+   corrected before release.
 3. **Attribute join, not spatial intersection.** Mesh blocks nest exactly within SA2s, so they are
    matched by `SA2_CODE21 = region_code`. This avoids boundary slivers.
 4. **Dissolve.** The selected mesh blocks are dissolved into **one display shape per SA2**.
 5. **Not analysed SA2s** are drawn at **full extent with a hatch**, so "no data for this area"
    stays visible even where an SA2 has few or no residential mesh blocks.
+5a. **Analysed SA2s with no residential mesh blocks** (Carabooda – Pinjar in 2021) are drawn at full
+    extent (`display_type = 'full_extent_no_residential'`), so no analysed SA2 disappears from the map.
 6. **SA2 outlines** are drawn on top with no fill, in thin light grey (`#c8c8c8`, 0.2 mm), so areas
    remain recognisable.
 
@@ -70,9 +73,10 @@ mesh block (MB 50077840000, 19.19 km²), which is correct ABS data.
 
 ### Pipeline
 
-- 2021 mesh block boundaries for Greater Perth are added to the scripted pipeline: download entry in
-  `data/sources.csv`, loaded into PostGIS with their category and SA2 code. Storage design (new
-  table or new level in `geo.region`) is decided in the implementation plan.
+- 2021 mesh block boundaries are loaded from the ASGS Edition 3 Main Structure GeoPackage already
+  recorded in `data/sources.csv` (layer `MB_2021_AUST_GDA2020`, fields `MB_CATEGORY_2021` and
+  `SA2_CODE_2021`), so SA2s and mesh blocks come from the same file and release. No additional
+  download is needed. Only Greater Perth mesh blocks (`GCC_CODE_2021 = '5GPER'`) are loaded.
 - The display geometry is produced by SQL, not by manual QGIS steps.
 - The QGIS style is saved as `qgis/styles/hotspots_confidence.qml` and committed.
 
@@ -97,7 +101,7 @@ mesh block (MB 50077840000, 19.19 km²), which is correct ABS data.
 
 ## Validation checks for implementation
 
-- One display shape per analysed SA2 that has at least one residential mesh block on its largest part.
+- Exactly 185 display shapes: one per Greater Perth SA2 (`residential_mask`, `full_extent_no_residential` or `full_extent`).
 - No display shape intersects Rottnest Island (MB 50077840000 excluded).
 - Every display shape lies within its SA2.
 - All 20 not-analysed SA2s are present at full extent.

@@ -28,8 +28,7 @@ displayed.
 | Primary | **Queen contiguity** (shared edge or corner), row-standardised | Standard for areal data; neighbours are defined by shared boundaries |
 | Sensitivity | **k-nearest neighbours, k = 6**, row-standardised | Tests whether results depend on the neighbour definition |
 
-KNN distances are computed in **GDA2020 / MGA zone 50 (EPSG:7850)**, from a **representative point of
-each SA2's largest polygon part**, so offshore parts (for example Rottnest Island) do not displace
+KNN distances are computed in **GDA2020 / MGA zone 50 (EPSG:7850)**, from a **representative point of each SA2’s main populated part (see Amendment 1)**, so offshore parts (for example Rottnest Island) do not displace
 an SA2's location.
 
 ### Statistics
@@ -74,7 +73,27 @@ an SA2's location.
   a low-burden SA2 inside a high-burden area (spatial outlier) are explained.
 - Global Moran's I is reported on the About page.
 
-## Results (run 1)
+## Amendment 1: main populated part (bug fix)
+
+**Date:** 2026-11-04
+
+**What was wrong.** KNN points used a representative point of each SA2's largest polygon part by
+area. For Fremantle, the largest part is Rottnest Island (19.18 km²), larger than any mainland part
+(the largest is 6.70 km²). Fremantle's KNN point was therefore about 18 km offshore. This affected
+Fremantle's own KNN neighbours and any SA2 for which Fremantle was among the six nearest.
+
+**Why this is a fix, not a method change.** The rule's stated purpose was that offshore parts must not
+displace an SA2's location. The implementation did not meet that purpose. The correction follows from
+that stated intent and was decided before the corrected results were seen.
+
+**New rule.** An SA2's *main populated part* is the polygon part containing the most 2021 Residential
+mesh blocks; if no part contains any, the largest part by area (EPSG:7850). It is computed once, in
+`analysis.sa2_main_part`, and used by both the KNN weights and the display geometry (ADR-003).
+
+**Runs.** Run 1 is kept in `analysis.hotspot_runs` but is superseded by run 2. Queen-based results are
+not affected, because queen contiguity does not use points.
+
+## Results (run 1, superseded; see Amendment 1)
 
 `run_id = 1`, `code_commit = b82cf28643c9d8cb8bd3bbe98410b29f483c097b`, libpysal 4.15.1, esda 2.10.0.
 
