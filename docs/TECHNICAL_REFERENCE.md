@@ -302,3 +302,38 @@ Note: the `geo` schema's 928 MB is larger than a single clean load would produce
 6. **`geo` schema disk bloat from repeated development reloads** — see the note at the end of Section 5. Not a code defect; a `VACUUM FULL` or a from-scratch reload would resolve it.
 
 7. **`census.variable` cannot be keyed on the DataPack's own `Short` column.** An explicit check of both years' full metadata found 415 (2021) and 382 (2016) `Short` values that repeat across different tables, of which 38 and 10 respectively are *genuine* semantic conflicts (the same `Short` code means different things in different tables — e.g. `P_85ov_Total` means "Persons 85+, Total" in most tables but "Age group of parent 85+, Total" in `G28`). `census.variable` is keyed on the metadata's `Sequential` column instead (confirmed 100% unique within each year), with `(census_year, table_id, short_code)` as a separate `UNIQUE` constraint used only to resolve a given DataPack CSV column to its `variable_code`.
+
+8. **"Largest polygon part by area" is not "the mainland part" (fixed).** Both ADR-002's KNN representative-point logic and the first draft of ADR-003's display mask picked each SA2's single largest-by-area polygon part as its "main" part. For Fremantle SA2, that part is **Rottnest Island** (19.18 km²) — larger than every actual mainland piece of Fremantle (6.70 km², 3.61 km², plus two slivers). Caught by `check_display_geometry.py`'s Rottnest-exclusion check failing. Fixed by ranking parts by `(residential_mesh_block_count DESC, area_in_EPSG:7850 DESC)` instead of area alone — Rottnest is a single mesh block despite its size, while mainland Fremantle is carved into hundreds — computed once in `analysis.sa2_main_part` (Section 7) and read from there by both consumers, rather than reimplemented in Python and SQL separately.
+
+## 7. ADR pipeline (mesh blocks, hotspot analysis, display geometry) — build order
+
+This section covers the files added for ADR-001/002/003 (housing-stress indicator, hotspot analysis, cartographic display), which build on top of everything in Sections 1-6. Build order, after the base pipeline above has already been run once:
+
+```
+00_reset_database.sql          -- base schema (Section 4) -- destructive, not re-run for this work
+01_geo_mesh_block.sql           -- geo.mesh_block table (non-destructive, CREATE ... IF NOT EXISTS)
+02_fn_gi_star_confidence.sql    -- analysis.gi_star_confidence(queen_class, knn_class) function
+scripts/load_mesh_blocks.py    -- loads 2021 Greater Perth mesh blocks into geo.mesh_block
+10_analysis_housing_stress.sql           -- analysis.housing_stress_sa2 view (ADR-001)
+11_analysis_housing_stress_hotspots.sql  -- analysis.hotspot_runs / housing_stress_hotspots tables
+                                             + housing_stress_hotspots_latest view (ADR-002)
+12_analysis_sa2_main_part.sql  -- analysis.sa2_main_part materialized view (single source of
+                                   truth for each SA2's "main populated part" -- see issue 8 above)
+scripts/hotspots_housing_stress.py  -- runs the hotspot analysis, reads sa2_main_part for KNN
+                                        points, writes a new row to hotspot_runs (run_id)
+13_analysis_housing_stress_display.sql  -- analysis.housing_stress_display_sa2 materialized
+                                             view (ADR-003 display mask), reads sa2_main_part
+```
+
+**Mesh blocks need no separate download.** The 2021 mesh block layer (`MB_2021_AUST_GDA2020`) is already inside the Main Structure GeoPackage downloaded for SA2/STE (`data/raw/boundaries/2021/ASGS_2021_MAIN_STRUCTURE_GPKG_GDA2020/...`) — `scripts/load_mesh_blocks.py` reads it directly, filtered to `GCCSA_CODE_2021 = '5GPER'` (Greater Perth), 27,112 rows.
+
+**`12` and `13` are coupled, deliberately without `CASCADE`.** `13` depends on `12`'s materialized view. If you change `12`'s definition, re-run `12` then `13` together — re-running `12` alone first will fail with a dependency error if `13` already exists, by design, so the coupling can't be missed silently.
+
+**For a routine data refresh with no definition change** (reloaded mesh blocks or boundaries, but the SQL itself hasn't changed), use `scripts/refresh_display.sql` instead of re-running `12`/`13`:
+```sql
+REFRESH MATERIALIZED VIEW CONCURRENTLY analysis.sa2_main_part;
+REFRESH MATERIALIZED VIEW CONCURRENTLY analysis.housing_stress_display_sa2;
+```
+`REFRESH ... CONCURRENTLY` requires a unique index on the view (both have one) and **must run outside a transaction block** (`conn.autocommit = True` when driving it from psycopg2, same as any other `CONCURRENTLY` operation) — a plain `REFRESH MATERIALIZED VIEW` works inside a transaction but locks the view against reads while it rebuilds.
+
+**Multiple hotspot runs accumulate, by design.** `analysis.hotspot_runs`/`housing_stress_hotspots` are never wiped and replaced — each `scripts/hotspots_housing_stress.py` run adds a new `run_id`, keeping prior runs in history. `analysis.housing_stress_hotspots_latest` and `check_hotspots.py`'s expected values are pinned to whichever `run_id` is "latest" for a given `indicator`; comparing two runs directly uses `sql/diagnostics/compare_hotspot_runs.sql` (parameterised by both `run_id`s, since there's no `psql` on this machine to use its native `:variable` substitution — substitute the `{{RUN_A}}`/`{{RUN_B}}` placeholders before executing).

@@ -17,6 +17,7 @@ import esda
 import geopandas as gpd
 import libpysal
 import numpy as np
+import shapely
 from psycopg2.extras import execute_values
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -78,17 +79,31 @@ def build_queen_weights(gdf):
     return w
 
 
-def build_knn_weights(gdf):
-    gdf_proj = gdf.to_crs(KNN_CRS)
+def build_knn_weights(conn, gdf):
+    """KNN weights from each SA2's representative point, read from
+    analysis.sa2_main_part (sql/12) -- the single source of truth for a
+    SA2's "main populated part", not computed independently here. (An
+    earlier version picked the largest polygon part by raw area, which
+    for Fremantle SA2 incorrectly selected Rottnest Island -- 19.18 km^2,
+    larger than any of Fremantle's mainland parts -- as its KNN point.)
+    """
+    region_codes = list(gdf.index)
+    cur = conn.cursor()
+    cur.execute(
+        "SELECT region_code, ST_AsBinary(representative_point_7850) "
+        "FROM analysis.sa2_main_part WHERE region_code = ANY(%s)",
+        (region_codes,),
+    )
+    points_by_code = {rc: shapely.from_wkb(bytes(wkb)) for rc, wkb in cur.fetchall()}
+    cur.close()
 
-    def largest_part_point(geom):
-        if geom.geom_type == "Polygon":
-            return geom.representative_point()
-        largest = max(geom.geoms, key=lambda g: g.area)
-        return largest.representative_point()
+    missing = [rc for rc in region_codes if rc not in points_by_code]
+    if missing:
+        raise RuntimeError(f"analysis.sa2_main_part missing representative points for: {missing}")
 
-    points = gdf_proj.geometry.apply(largest_part_point)
-    points_gdf = gpd.GeoDataFrame(geometry=points, crs=KNN_CRS, index=gdf_proj.index)
+    points_gdf = gpd.GeoDataFrame(
+        geometry=[points_by_code[rc] for rc in region_codes], crs=KNN_CRS, index=region_codes,
+    )
     with warnings.catch_warnings(record=True) as caught:
         warnings.simplefilter("always")
         w = libpysal.weights.KNN.from_dataframe(points_gdf, k=KNN_K, use_index=True)
@@ -173,8 +188,8 @@ def main():
     else:
         analysis_gdf = gdf
 
-    w_knn = build_knn_weights(analysis_gdf)
-    logger.info("KNN (k=%d) weights built on %s, largest-part representative points", KNN_K, KNN_CRS)
+    w_knn = build_knn_weights(conn, analysis_gdf)
+    logger.info("KNN (k=%d) weights built from analysis.sa2_main_part representative points (%s)", KNN_K, KNN_CRS)
 
     # --- Global Moran's I ---------------------------------------------
     np.random.seed(SEED)  # esda.Moran has no seed= kwarg; it draws from the global RNG state
@@ -260,7 +275,8 @@ def main():
         (
             INDICATOR, SOURCE_VIEW, FILTER_RULE, len(analysis_gdf), ALPHA, KNN_K, commit,
             SEED, PERMUTATIONS, libpysal.__version__, esda.__version__,
-            "queen contiguity; knn (k=6, MGA zone 50, largest-part representative point)",
+            "queen contiguity; knn (k=6, MGA zone 50, main-populated-part representative point "
+            "from analysis.sa2_main_part)",
             len(w_queen.islands) if hasattr(w_queen, "islands") else 0,
             float(moran.I), float(moran.z_sim), float(moran.p_sim),
             float(queen_result["gi_cutoff"]), float(queen_result["lisa_cutoff"]),
