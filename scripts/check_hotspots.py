@@ -8,16 +8,16 @@ from db import get_connection
 
 ALL_PASSED = True
 
-EXPECTED_RUN_ID = 1
+EXPECTED_RUN_ID = 2
 
 EXPECTED_CONFIDENCE_COUNTS = {
     "robust_hotspot": 5,
     "possible_hotspot": 4,
     "robust_coldspot": 1,
-    "possible_coldspot": 4,
+    "possible_coldspot": 2,
     "conflicting": 0,
     "not_analysed": 20,
-    "not_significant": 151,
+    "not_significant": 153,
 }
 
 EXPECTED_ROBUST_HOTSPOTS = {
@@ -42,8 +42,9 @@ def main():
     conn = get_connection()
     cur = conn.cursor()
 
-    # 0. The expected counts below are pinned to run 1 (ADR-002's documented
-    # results). If the latest run has moved on, those expectations are stale.
+    # 0. The expected counts below are pinned to run 2 (ADR-002's documented
+    # results, amended after the largest-part/Rottnest fix). If the latest run
+    # has moved on, those expectations are stale.
     cur.execute(
         "SELECT run_id FROM analysis.hotspot_runs WHERE indicator = 'rent_burden' "
         "ORDER BY run_id DESC LIMIT 1;"
@@ -62,7 +63,7 @@ def main():
     total = cur.fetchone()[0]
     check("Row count == 185", total == 185, f"got {total}")
 
-    # 2. gi_star_confidence class counts match ADR-002's documented run-1 results.
+    # 2. gi_star_confidence class counts match ADR-002's documented run-2 results.
     cur.execute(
         "SELECT gi_star_confidence, COUNT(*) FROM analysis.housing_stress_hotspots_latest "
         "GROUP BY gi_star_confidence;"
