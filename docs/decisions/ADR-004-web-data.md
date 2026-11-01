@@ -45,12 +45,15 @@ Tiles carry only what the map styles or labels. Everything else lives in JSON, l
 
 ### Classes and bounds computed at export, not in the browser
 
-- **Quintile classes** of `rent_burden` over the 165 valid SA2s, computed with Postgres
-  `NTILE(5) OVER (ORDER BY rent_burden)`: five equal-count groups of 33 SA2s. The stored break for
-  each class is the **maximum** `rent_burden` in that group, so class *k* covers values above break
-  *k − 1* up to and including break *k*. The same `NTILE` call assigns `rent_burden_quintile` in the
-  tiles, so classes and breaks are consistent by construction. These are the authoritative breaks;
-  other tools (for example QGIS) use different quantile methods and can give slightly different values.
+- **Quintile classes** of `rent_burden` over the 165 valid SA2s, based on the value **rounded to
+  3 decimals** (the same rounding shown in the map and side panel). SA2s with the same rounded value
+  form one group. Groups are sorted by value, and each group's class is
+  `CEIL(cumulative count × 5 / 165)`, capped at 5: the 20% band in which the group's cumulative upper
+  edge falls. A tied group is never split, so classes are as equal in size as ties allow. The stored
+  break for each class is its maximum rounded value; class *k* covers values above break *k − 1* up to
+  and including break *k*. The same SQL assigns `rent_burden_quintile` in the tiles, so classes and
+  breaks are consistent by construction. These are the authoritative breaks; other tools (for example
+  QGIS) use different quantile methods. See Amendment 1.
 - **Robust-hotspot bounding box** (EPSG:4326) for the zoom-to-cluster control.
 
 ### JSON
@@ -70,6 +73,23 @@ Tiles carry only what the map styles or labels. Everything else lives in JSON, l
 - The ABS attribution text in `run_metadata.json` must be checked against the ABS's current
   attribution guidance before publication.
 
+## Amendment 1: tied values in quintile classes
+
+**What was wrong.** The first export used `NTILE(5)`, which splits rows by position, not by value.
+The tie check found SA2s with identical rounded values (0.174 and 0.216) placed in different classes,
+so equal values would have been drawn in different colours.
+
+**Change.** Classes are now assigned to groups of equal rounded values by cumulative share (see
+"Classes and bounds computed at export"). Implemented in commit `772bd30`; recorded here afterwards.
+
+**Effect.** Class sizes changed from 33 each to 30 / 36 / 33 / 32 / 34. Four SA2s moved up one class:
+Trigg – North Beach – Watermans Bay, Bayswater – Embleton – Bedford and Harrisdale (class 1 → 2),
+and High Wycombe (class 4 → 5).
+
+**Alternatives rejected.** Keeping `NTILE(5)` (equal values in different colours). Classing on
+4 decimals to remove the ties (more precision than a proxy indicator supports, and not the value
+readers see).
+
 ## Results (export of run 2)
 
 | File | Size (bytes) |
@@ -81,7 +101,7 @@ Tiles carry only what the map styles or labels. Everything else lives in JSON, l
 | `run_metadata.json` | 1,066 |
 
 - 185 distinct SA2s in every spatial output and in `sa2_details.json`.
-- Quintile breaks (upper bound per class): 0.174, 0.187, 0.199, 0.216, 0.300.
+- Quintile breaks (upper bound per class): 0.172, 0.187, 0.199, 0.215, 0.300; class sizes 30 / 36 / 33 / 32 / 34.
 - Robust-hotspot bounding box: 115.711, −32.615, 115.815, −32.453 (Mandurah–Peel).
 
 ## Alternatives considered
