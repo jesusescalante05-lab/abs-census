@@ -110,13 +110,36 @@ clustered.
 Sensitivity: 8 of 165 SA2s change Gi\* class between queen and KNN. **No SA2 reverses** between
 hotspot and coldspot; all changes are between significant and not significant.
 
+## Results (run 2, current)
+
+`run_id = 2`, `code_commit = 596fd7f323b1fcf8e39901d1d3670ae7cc6eb2f5`, libpysal 4.15.1, esda 2.10.0.
+Same seed (12345), permutations (9,999) and data as run 1; only the KNN points changed (Amendment 1).
+
+**Global Moran's I = 0.3625, z = 7.03, p = 0.0001**, identical to run 1, as expected.
+All queen-based results are identical to run 1.
+
+| Class | SA2s |
+|---|---|
+| Robust hotspot | Mandurah, Greenfields, Mandurah – South, Mandurah – East, Mandurah – North |
+| Possible hotspot | Halls Head – Erskine, Falcon – Wannanup, Dawesville – Bouvard, Pinjarra |
+| Robust coldspot | Claremont (WA) |
+| Possible coldspot | Subiaco – Shenton Park, Bullsbrook |
+
+**Changes from run 1** (`sql/diagnostics/compare_hotspot_runs.sql`): Fremantle and Bicton – Palmyra
+changed from possible coldspot to not significant. Both had been KNN coldspots only because
+Fremantle's KNN point was on Rottnest Island. No other SA2 changed.
+
+Sensitivity: 6 of 165 SA2s change Gi\* class between queen and KNN; no SA2 reverses between hotspot
+and coldspot.
+
 ### Findings to explain in the product
 
 1. **Water gap in Peel.** Queen weights split into two components (162 and 3 SA2s). Dawesville –
    Bouvard, Falcon – Wannanup and Halls Head – Erskine touch only each other: the estuary and the
    Dawesville Channel separate them from Mandurah (closest gap 122 m). Under queen weights their
    neighbourhood is tiny, so they are significant only under KNN. They are shown as possible hotspots,
-   with this reason.
+   with this reason. Fremantle’s run 1 KNN result was also affected by an offshore point; see Amendment 1.
+
 2. **Gi\* and local Moran answer different questions.** Mandurah – North (`rent_burden` 0.188, below
    the Perth median) is a Gi\* hotspot because its neighbourhood is high, and a local Moran spatial
    outlier because it is lower than its neighbours. Claremont (0.222) is the mirror case.
@@ -148,4 +171,4 @@ hotspot and coldspot; all changes are between significant and not significant.
 - Add `gi_star_confidence` (classes above) to `analysis.housing_stress_hotspots_latest`, computed from
   `gi_star_class` and `knn_gi_star_class`, with `not_analysed` for excluded SA2s.
 - Validation checks: 185 rows; class counts match run 1 (5 robust hotspots, 4 possible hotspots,
-  1 robust coldspot, 4 possible coldspots, 0 conflicting, 20 not analysed, 151 not significant).
+  1 robust coldspot, 2 possible coldspots, 0 conflicting, 20 not analysed, 153 not significant (run 2)).
