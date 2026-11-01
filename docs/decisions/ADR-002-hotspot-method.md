@@ -93,6 +93,12 @@ mesh blocks; if no part contains any, the largest part by area (EPSG:7850). It i
 **Runs.** Run 1 is kept in `analysis.hotspot_runs` but is superseded by run 2. Queen-based results are
 not affected, because queen contiguity does not use points.
 
+**Scope of the bug.** Five analysed SA2s have more than one polygon part: Fremantle (5), Rockingham (6),
+Mandurah – South (3), Safety Bay – Shoalwater (3) and Halls Head – Erskine (2). Only for Fremantle did
+the old rule pick a different part (Rottnest Island: 1 residential mesh block; mainland part chosen by
+the new rule: 131). For the other four, the largest part by area is also the most populated part, so
+the old rule gave the right result by coincidence rather than by design.
+
 ## Results (run 1, superseded; see Amendment 1)
 
 `run_id = 1`, `code_commit = b82cf28643c9d8cb8bd3bbe98410b29f483c097b`, libpysal 4.15.1, esda 2.10.0.
