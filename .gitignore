@@ -4,3 +4,5 @@ __pycache__/
 *.pyc
 data/raw/
 logs/
+web/node_modules/
+web/dist/
