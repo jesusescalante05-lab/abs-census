@@ -1,0 +1,2780 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507041181",
+        "region_name": "Melville",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.80892712518215,
+          -32.03170735999874
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "502011025",
+        "region_name": "Mandurah",
+        "gi_star_confidence": "robust_hotspot"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.7358998512496,
+          -32.52028337704886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "502011026",
+        "region_name": "Mandurah - East",
+        "gi_star_confidence": "robust_hotspot"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.78417064772141,
+          -32.5619486100631
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "502011027",
+        "region_name": "Mandurah - North",
+        "gi_star_confidence": "robust_hotspot"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.77025725829957,
+          -32.48196710767584
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "502011028",
+        "region_name": "Mandurah - South",
+        "gi_star_confidence": "robust_hotspot"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.73750922759007,
+          -32.55485911524137
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "502011029",
+        "region_name": "Pinjarra",
+        "gi_star_confidence": "possible_hotspot"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.88396791162417,
+          -32.623133117215566
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "503011030",
+        "region_name": "City Beach",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.76655648393037,
+          -31.93386723258091
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "503011032",
+        "region_name": "Cottesloe",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.75676011413208,
+          -31.99902038775226
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "503011033",
+        "region_name": "Floreat",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.79306853016965,
+          -31.937813841079585
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505021096",
+        "region_name": "Wembley Downs - Churchlands - Woodlands",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.78254869446025,
+          -31.916020210036333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505021097",
+        "region_name": "Yokine - Coolbinia - Menora",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.85632196152845,
+          -31.90808318683256
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505021301",
+        "region_name": "Dianella - North",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.8657924709592,
+          -31.87786481618074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505021302",
+        "region_name": "Dianella - South",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.87625684288673,
+          -31.89921408571628
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505031098",
+        "region_name": "Alexander Heights - Koondoola",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.86577125901633,
+          -31.835767606605735
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505031099",
+        "region_name": "Butler - Merriwa - Ridgewood",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.71265515365884,
+          -31.653875748680367
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505031100",
+        "region_name": "Carramar",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.78712928896773,
+          -31.68693827964591
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505031101",
+        "region_name": "Clarkson",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.72684041678792,
+          -31.69125411306069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505031102",
+        "region_name": "Girrawheen",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.83919072996086,
+          -31.84118810659372
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505031104",
+        "region_name": "Marangaroo",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.83709545165087,
+          -31.827708812537068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505031105",
+        "region_name": "Mindarie - Quinns Rocks - Jindalee",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.6989987440932,
+          -31.66848754951246
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505031106",
+        "region_name": "Neerabup National Park",
+        "gi_star_confidence": "not_analysed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.73802206343105,
+          -31.673517892356234
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505031107",
+        "region_name": "Tapping - Ashby - Sinagra",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.83449814863866,
+          -31.723102589923386
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505031255",
+        "region_name": "Alkimos - Eglinton",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.67974409418997,
+          -31.599946106825573
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507041182",
+        "region_name": "Murdoch - Kardinya",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.82685709493713,
+          -32.06786807547549
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507041183",
+        "region_name": "Willagee",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.80476438214895,
+          -32.051283745315494
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507041184",
+        "region_name": "Winthrop",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.82951301665041,
+          -32.05265027394196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507051186",
+        "region_name": "Cooloongup",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.76461140387539,
+          -32.29136053909629
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505031256",
+        "region_name": "Carabooda - Pinjar",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.77272243732874,
+          -31.576964720073985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505031258",
+        "region_name": "Yanchep",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.6436484457352,
+          -31.546568783296976
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505031303",
+        "region_name": "Hocking - Pearsall",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.84617402323511,
+          -31.77484064883769
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505031304",
+        "region_name": "Landsdale",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.8697617159411,
+          -31.80738310136346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505031305",
+        "region_name": "Madeley - Darch",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.837443646897,
+          -31.80201760848375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "503011034",
+        "region_name": "Mosman Park - Peppermint Grove",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.76373234705912,
+          -32.00918009240686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "503011035",
+        "region_name": "Nedlands - Dalkeith - Crawley",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.80765797035858,
+          -31.98469660394312
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "503021037",
+        "region_name": "Kings Park (WA)",
+        "gi_star_confidence": "not_analysed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.83264235976858,
+          -31.962346982679854
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "503021038",
+        "region_name": "Mount Hawthorn - Leederville",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.83907407372719,
+          -31.927633257476508
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505031306",
+        "region_name": "Wanneroo - Sinagra",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.80917537984219,
+          -31.749431378747975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "503021039",
+        "region_name": "Mount Lawley - Inglewood",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.87692125692048,
+          -31.92459038074721
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "503021040",
+        "region_name": "North Perth",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.85358789161263,
+          -31.924849997047552
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "503021042",
+        "region_name": "Subiaco - Shenton Park",
+        "gi_star_confidence": "possible_coldspot"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.8108090103294,
+          -31.95325774064232
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "503021043",
+        "region_name": "Wembley - West Leederville - Glendalough",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.8214690569038,
+          -31.92937366953852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "503021295",
+        "region_name": "East Perth",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.87546840904804,
+          -31.953713280977
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "503021296",
+        "region_name": "Perth (North) - Highgate",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.86585084975366,
+          -31.943168477262898
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504011047",
+        "region_name": "Morley",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.91199297146292,
+          -31.890125868682755
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504011048",
+        "region_name": "Noranda",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.89850250151434,
+          -31.872666854352847
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504021049",
+        "region_name": "Chidlow",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.3145114661188,
+          -31.80868792930502
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504021050",
+        "region_name": "Glen Forrest - Darlington",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.09911281403738,
+          -31.893773881774006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504021051",
+        "region_name": "Helena Valley - Koongamia",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.04646379153509,
+          -31.91842796144064
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504021052",
+        "region_name": "Malmalling - Reservoir",
+        "gi_star_confidence": "not_analysed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.28210002190153,
+          -31.970099095828317
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504021053",
+        "region_name": "Mundaring",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.18425353831803,
+          -31.88777263386233
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507051189",
+        "region_name": "Rockingham Lakes",
+        "gi_star_confidence": "not_analysed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.77887274228762,
+          -32.32767332362382
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507051192",
+        "region_name": "Waikiki",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.75230546166694,
+          -32.315209359376404
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507051193",
+        "region_name": "Warnbro",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.75544777070661,
+          -32.33885706431206
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504021054",
+        "region_name": "Swan View - Greenmount - Midvale",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.04338459001276,
+          -31.892169942818175
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504031055",
+        "region_name": "Avon Valley National Park",
+        "gi_star_confidence": "not_analysed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.19353013758123,
+          -31.64279658226437
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504031056",
+        "region_name": "Ballajura",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.89821379592544,
+          -31.825864235330304
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504031057",
+        "region_name": "Beechboro",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.96057345825113,
+          -31.835767713563083
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506011110",
+        "region_name": "Armadale - Wungong - Brookdale",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.98879712565983,
+          -32.16408128916231
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506011111",
+        "region_name": "Ashendon - Lesley",
+        "gi_star_confidence": "not_analysed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.21475483972546,
+          -32.18490125833372
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506011112",
+        "region_name": "Camillo - Champion Lakes",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.99417506180814,
+          -32.11623060455263
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506011114",
+        "region_name": "Kelmscott",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.01893929790526,
+          -32.11514760306187
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506011115",
+        "region_name": "Mount Nasura - Mount Richon - Bedfordale",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.057208293224,
+          -32.169009929257406
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504031058",
+        "region_name": "Bullsbrook",
+        "gi_star_confidence": "possible_coldspot"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.03765735350014,
+          -31.67294747582196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504031063",
+        "region_name": "Malaga",
+        "gi_star_confidence": "not_analysed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.89748723760972,
+          -31.856411713258908
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504031064",
+        "region_name": "Melaleuca - Lexia",
+        "gi_star_confidence": "not_analysed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.91591761744439,
+          -31.719417852712834
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506011117",
+        "region_name": "Seville Grove",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.99306815963584,
+          -32.13417989031319
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506011307",
+        "region_name": "Harrisdale",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.9337036644166,
+          -32.11812397429577
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504031065",
+        "region_name": "Middle Swan - Herne Hill",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.02517824866177,
+          -31.849202037306867
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504031066",
+        "region_name": "Midland - Guildford",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.00627601035987,
+          -31.89387649994914
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504031067",
+        "region_name": "Stratton - Jane Brook",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.06768163157727,
+          -31.84081378921735
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504031068",
+        "region_name": "The Vines",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.04701993540452,
+          -31.779279130806703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504031069",
+        "region_name": "Walyunga National Park",
+        "gi_star_confidence": "not_analysed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.07369354941983,
+          -31.71639499258097
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506011308",
+        "region_name": "Piara Waters - Forrestdale",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.9260420508325,
+          -32.14807257748774
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506021118",
+        "region_name": "Belmont - Ascot - Redcliffe",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.93012283921338,
+          -31.941267893926064
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504031298",
+        "region_name": "Aveley",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.98827581444178,
+          -31.77970631401179
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504031299",
+        "region_name": "Brabham - Henley Brook",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.98398023118773,
+          -31.812875108272976
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504031300",
+        "region_name": "Ellenbrook",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.96536659206336,
+          -31.768799094630005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506021119",
+        "region_name": "East Victoria Park - Carlisle",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.91093689776545,
+          -31.984958284158346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505011070",
+        "region_name": "Craigie - Beldon",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.7682534633607,
+          -31.783344326904057
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505011071",
+        "region_name": "Currambine - Kinross",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.74342729950006,
+          -31.727317602736715
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506021120",
+        "region_name": "Kewdale Commercial",
+        "gi_star_confidence": "not_analysed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.95970938664375,
+          -31.978483611467862
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505011072",
+        "region_name": "Duncraig",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.77581663451762,
+          -31.831131275254528
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505011073",
+        "region_name": "Greenwood - Warwick",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.80511390915152,
+          -31.831527944328396
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505011074",
+        "region_name": "Heathridge - Connolly",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.75445719008437,
+          -31.757518257459438
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505011075",
+        "region_name": "Hillarys",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.74317042406935,
+          -31.810943616972043
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505011076",
+        "region_name": "Iluka - Burns Beach",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.72634175551913,
+          -31.727870738775767
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505011077",
+        "region_name": "Joondalup - Edgewater",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.77473402128383,
+          -31.746640791508685
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505011078",
+        "region_name": "Kingsley",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.80132532819985,
+          -31.810043588387607
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506021121",
+        "region_name": "Perth Airport",
+        "gi_star_confidence": "not_analysed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.97096925383282,
+          -31.948765515715095
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506021123",
+        "region_name": "Victoria Park - Lathlain - Burswood",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.89974325244846,
+          -31.962675080158967
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506021309",
+        "region_name": "Cloverdale",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.94150105331973,
+          -31.96297030739003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505011079",
+        "region_name": "Mullaloo - Kallaroo",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.74426763258933,
+          -31.78464759750055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506021310",
+        "region_name": "Kewdale",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.932773819656,
+          -31.974308103510523
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506021311",
+        "region_name": "Rivervale",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.91790110029356,
+          -31.96159210426542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506031124",
+        "region_name": "Bentley - Wilson - St James",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.9099543496776,
+          -32.01202756508598
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506031125",
+        "region_name": "Canning Vale - West",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.90403623290105,
+          -32.09255551572063
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505011080",
+        "region_name": "Ocean Reef",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.73611372270796,
+          -31.759180117847105
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505011081",
+        "region_name": "Padbury",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.7689513816947,
+          -31.806313006225427
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506031126",
+        "region_name": "Canning Vale Commercial",
+        "gi_star_confidence": "not_analysed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.91061794268705,
+          -32.06649910550093
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505011082",
+        "region_name": "Sorrento - Marmion",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.75497823161525,
+          -31.832050442114294
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505011083",
+        "region_name": "Woodvale",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.79668392230664,
+          -31.78846900460576
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505021084",
+        "region_name": "Balcatta - Hamersley",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.81786765388664,
+          -31.866389734536114
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505021085",
+        "region_name": "Balga - Mirrabooka",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.85097363655903,
+          -31.854809321892677
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505021087",
+        "region_name": "Herdsman",
+        "gi_star_confidence": "not_analysed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.80364254619431,
+          -31.919260705370306
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505021088",
+        "region_name": "Innaloo - Doubleview",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.78881720686547,
+          -31.895385764829655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505021089",
+        "region_name": "Karrinyup - Gwelup - Carine",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.7837521050714,
+          -31.86534216065644
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505021090",
+        "region_name": "Nollamara - Westminster",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.8435381825019,
+          -31.874313816748455
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505021091",
+        "region_name": "Osborne Park Industrial",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.81183472527603,
+          -31.905241038719065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505021092",
+        "region_name": "Scarborough",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.76557811894193,
+          -31.895977431807385
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505021093",
+        "region_name": "Stirling - Osborne Park",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.81526117195607,
+          -31.890793249748896
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506031127",
+        "region_name": "Cannington - Queens Park",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.94149403309173,
+          -32.01277748868245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506031128",
+        "region_name": "Parkwood - Ferndale - Lynwood",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.92591138185979,
+          -32.03862473976158
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506031129",
+        "region_name": "Riverton - Shelley - Rossmoyne",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.89067426599325,
+          -32.034068181817794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506031130",
+        "region_name": "Welshpool",
+        "gi_star_confidence": "not_analysed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.94664503381108,
+          -31.992896647243718
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506031131",
+        "region_name": "Willetton",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.88863161900625,
+          -32.05386152481971
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506041133",
+        "region_name": "Canning Vale - East",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.9319583158221,
+          -32.08751224270307
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506041134",
+        "region_name": "Gosnells",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.99507039445004,
+          -32.08764472001072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506041135",
+        "region_name": "Huntingdale - Southern River",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.95552597341995,
+          -32.09876803221836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506041136",
+        "region_name": "Maddington - Orange Grove - Martin",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.0197620618355,
+          -32.05588560100249
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506051138",
+        "region_name": "Forrestfield - Wattle Grove",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.00733936310945,
+          -31.982879097376212
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506051139",
+        "region_name": "High Wycombe",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.00310213602279,
+          -31.945093033936452
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506061142",
+        "region_name": "Byford",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.99736628621888,
+          -32.214445059102395
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506061143",
+        "region_name": "Mundijong",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.99713592245877,
+          -32.26757702703395
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506061144",
+        "region_name": "Serpentine - Jarrahdale",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.04361655289524,
+          -32.38121758243162
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507051312",
+        "region_name": "Baldivis - North",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.83532534876453,
+          -32.32274560221983
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507051313",
+        "region_name": "Baldivis - South",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.80949208298016,
+          -32.3584861127704
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507051314",
+        "region_name": "Karnup",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.81580052310262,
+          -32.42011952864036
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506071145",
+        "region_name": "Como",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.87031845855975,
+          -32.0028904064764
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507011148",
+        "region_name": "Banjup",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.87872410872636,
+          -32.1365600716041
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507011150",
+        "region_name": "Bibra Industrial",
+        "gi_star_confidence": "not_analysed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.81040433766455,
+          -32.105481594412204
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507011151",
+        "region_name": "Bibra Lake",
+        "gi_star_confidence": "not_analysed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.8265072259377,
+          -32.08820278927798
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507011153",
+        "region_name": "Coolbellup",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.80870074557764,
+          -32.084486225213034
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507011154",
+        "region_name": "Hamilton Hill",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.77901459214465,
+          -32.08461484188868
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507011155",
+        "region_name": "Henderson",
+        "gi_star_confidence": "not_analysed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.77893449648111,
+          -32.160110107915116
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507011158",
+        "region_name": "North Coogee",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.76102647504636,
+          -32.09497340310013
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507011159",
+        "region_name": "South Lake - Cockburn Central",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.83737032050979,
+          -32.1038394894286
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507011160",
+        "region_name": "Spearwood",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.78494573132174,
+          -32.107067611109905
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507011161",
+        "region_name": "Success - Hammond Park",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.85029746670433,
+          -32.15356084324099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507011163",
+        "region_name": "Yangebup",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.82417834764178,
+          -32.11787012492084
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507011259",
+        "region_name": "Beeliar - Wattleup",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.81604597007893,
+          -32.153171961578664
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507011260",
+        "region_name": "Jandakot",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.86842685966518,
+          -32.10167238307066
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507021164",
+        "region_name": "East Fremantle",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.76911255449998,
+          -32.036554067616045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507021165",
+        "region_name": "Fremantle",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.76082147460627,
+          -32.052551603802065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507021166",
+        "region_name": "Fremantle - South",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.77663627269068,
+          -32.0707737034427
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507021167",
+        "region_name": "O'Connor (WA)",
+        "gi_star_confidence": "not_analysed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.79363135991817,
+          -32.059950870851694
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507031169",
+        "region_name": "Wellard (West) - Bertram",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.84088628441825,
+          -32.257301380425204
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507031170",
+        "region_name": "Calista",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.79803983021044,
+          -32.25609771088777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507031172",
+        "region_name": "Hope Valley - Postans",
+        "gi_star_confidence": "not_analysed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.80868124868121,
+          -32.20724310579123
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507031174",
+        "region_name": "Parmelia - Orelia",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.8253837214609,
+          -32.24333218000743
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507031261",
+        "region_name": "Casuarina - Wandi",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.86776733314724,
+          -32.23002534261596
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507041175",
+        "region_name": "Applecross - Ardross",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.83400135365085,
+          -32.01756764385917
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507041176",
+        "region_name": "Bateman",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.84646992140138,
+          -32.05590054302774
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507041177",
+        "region_name": "Bicton - Palmyra",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.78486221704895,
+          -32.033070026338834
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "502011021",
+        "region_name": "Dawesville - Bouvard",
+        "gi_star_confidence": "possible_hotspot"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.64168490569315,
+          -32.700503680552195
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "502011022",
+        "region_name": "Falcon - Wannanup",
+        "gi_star_confidence": "possible_hotspot"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.65384259079268,
+          -32.58730311675045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "502011023",
+        "region_name": "Greenfields",
+        "gi_star_confidence": "robust_hotspot"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.76207339130428,
+          -32.52591114895677
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "502011024",
+        "region_name": "Halls Head - Erskine",
+        "gi_star_confidence": "possible_hotspot"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.69876626657383,
+          -32.54486718836369
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507041178",
+        "region_name": "Booragoon",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.84864835748378,
+          -32.02925826279054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507041179",
+        "region_name": "Bull Creek",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.86224228911453,
+          -32.055498732735394
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507041180",
+        "region_name": "Leeming",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.86626123946375,
+          -32.07658560201927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505021094",
+        "region_name": "Trigg - North Beach - Watermans Bay",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.75872707398591,
+          -31.866965171697874
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505021095",
+        "region_name": "Tuart Hill - Joondanna",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.83567710878982,
+          -31.901266882569395
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "503011031",
+        "region_name": "Claremont (WA)",
+        "gi_star_confidence": "robust_coldspot"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.78433561412967,
+          -31.98117710114053
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "503011036",
+        "region_name": "Swanbourne - Mount Claremont",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.78011939019957,
+          -31.966157102739192
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "503021297",
+        "region_name": "Perth (West) - Northbridge",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.85284926936579,
+          -31.952009703047406
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504011044",
+        "region_name": "Bassendean - Eden Hill - Ashfield",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.94460413546499,
+          -31.905820421008926
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504011045",
+        "region_name": "Bayswater - Embleton - Bedford",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.90835127746448,
+          -31.91404703515603
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504011046",
+        "region_name": "Maylands",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.89806019539957,
+          -31.935757399087557
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504031060",
+        "region_name": "Gidgegannup",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.17872970977565,
+          -31.754227828571715
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504031061",
+        "region_name": "Hazelmere - Guildford",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.99909243612855,
+          -31.916922316395883
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "504031062",
+        "region_name": "Lockridge - Kiara",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.96290108493739,
+          -31.87799064245022
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "505031257",
+        "region_name": "Two Rocks",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.61749097906242,
+          -31.496414655442123
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506011116",
+        "region_name": "Roleystone",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.09704179610387,
+          -32.11505709800372
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506041132",
+        "region_name": "Beckenham - Kenwick - Langford",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.96907616313018,
+          -32.02897471765534
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506041137",
+        "region_name": "Thornlie",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.95770627341125,
+          -32.06134809582878
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506051140",
+        "region_name": "Kalamunda - Maida Vale - Gooseberry Hill",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.036643690597,
+          -31.95861745352952
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506051141",
+        "region_name": "Lesmurdie - Bickley - Carmel",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.0828551426602,
+          -32.01025210489595
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506071146",
+        "region_name": "Manning - Waterford",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.87192373410166,
+          -32.018681582341394
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "506071147",
+        "region_name": "South Perth - Kensington",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.86959960262902,
+          -31.981100035271854
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507011152",
+        "region_name": "Coogee",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.77293480150273,
+          -32.12749064242067
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507031173",
+        "region_name": "Kwinana Industrial",
+        "gi_star_confidence": "not_analysed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.77427083049767,
+          -32.21620438841165
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507051187",
+        "region_name": "Port Kennedy",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.74462409013587,
+          -32.37111691681744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507051188",
+        "region_name": "Rockingham",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.75947134159749,
+          -32.273958542291496
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507051190",
+        "region_name": "Safety Bay - Shoalwater",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.72448650262825,
+          -32.303049005881704
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_code": "507051191",
+        "region_name": "Singleton - Golden Bay - Secret Harbour",
+        "gi_star_confidence": "not_significant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.76135089081046,
+          -32.4256973643617
+        ]
+      }
+    }
+  ]
+}

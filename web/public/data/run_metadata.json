@@ -1,0 +1,26 @@
+{
+  "run_id": 2,
+  "code_commit": "596fd7f323b1fcf8e39901d1d3670ae7cc6eb2f5",
+  "run_at": "2026-10-30T20:35:53.083476+08:00",
+  "seed": 12345,
+  "permutations": 9999,
+  "libpysal_version": "4.15.1",
+  "esda_version": "2.10.0",
+  "global_moran_i": 0.3624553683084821,
+  "global_moran_z_sim": 7.029665760287027,
+  "global_moran_p_sim": 0.0001,
+  "rent_burden_quintile_breaks": [
+    0.172,
+    0.187,
+    0.199,
+    0.215,
+    0.3
+  ],
+  "robust_hotspot_bbox_4326": [
+    115.71051177455662,
+    -32.61523239452856,
+    115.81473977061103,
+    -32.452562722256154
+  ],
+  "abs_attribution": "Source: Australian Bureau of Statistics (ABS), Census of Population and Housing, 2021, and the Australian Statistical Geography Standard (ASGS) Edition 3. Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). This product is not published, endorsed, or verified by the ABS. (Verify this wording against ABS's current attribution guidance before publishing.)"
+}
