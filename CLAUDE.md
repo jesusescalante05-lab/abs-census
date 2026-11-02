@@ -37,4 +37,4 @@ Run from `web/`:
   Never estimate or guess a date.
 - Check with: `git log --format="%ad %h %s" --date=short -- docs/decisions/`
 - Dates in ADR-002 (Amendment 1), ADR-003, ADR-004 and ADR-005 were corrected on
-  2026-11-01 to follow this rule.
+  2026-11-02 (commit b834019) to follow this rule.
