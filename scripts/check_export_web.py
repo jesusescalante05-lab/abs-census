@@ -156,6 +156,29 @@ def main():
             minx < maxx and miny < maxy,
             f"got {bbox}",
         )
+
+    attribution = metadata.get("abs_attribution", "")
+    check(
+        "run_metadata.json abs_attribution starts with 'Based on'",
+        attribution.startswith("Based on"),
+        f"got: {attribution[:30]!r}...",
+    )
+    check(
+        "run_metadata.json abs_attribution contains 'CC BY 4.0'",
+        "CC BY 4.0" in attribution,
+        f"abs_attribution: {attribution!r}",
+    )
+    check(
+        "run_metadata.json abs_attribution contains the CC BY 4.0 licence URL",
+        "https://creativecommons.org/licenses/by/4.0/" in attribution,
+        f"abs_attribution: {attribution!r}",
+    )
+    check(
+        "run_metadata.json abs_attribution has no leftover 'Verify this wording' placeholder",
+        "verify this wording" not in attribution.lower(),
+        f"abs_attribution: {attribution!r}",
+    )
+
     print(f"[INFO] run_metadata.json: {(OUT_DIR / 'run_metadata.json').stat().st_size} bytes")
 
     cur.close()

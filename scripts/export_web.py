@@ -55,11 +55,13 @@ QUINTILE_CTE = """
 """
 
 ABS_ATTRIBUTION = (
-    "Source: Australian Bureau of Statistics (ABS), Census of Population and Housing, "
-    "2021, and the Australian Statistical Geography Standard (ASGS) Edition 3. "
-    "Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). "
-    "This product is not published, endorsed, or verified by the ABS. "
-    "(Verify this wording against ABS's current attribution guidance before publishing.)"
+    "Based on Australian Bureau of Statistics (ABS) data: Census of Population and "
+    "Housing, 2021, and the Australian Statistical Geography Standard (ASGS) Edition 3. "
+    "© Commonwealth of Australia. "
+    "Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0): "
+    "https://creativecommons.org/licenses/by/4.0/. "
+    "The rent-burden indicator, hotspot results and display boundaries are the author's "
+    "own analysis, and are not published, endorsed, or verified by the ABS."
 )
 
 

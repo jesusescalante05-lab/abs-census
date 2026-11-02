@@ -25,9 +25,21 @@ Publishing to GitHub Pages. ADR-005 Limitation 7 set two gates before publishing
 - `npm audit fix --force` rejected: it would downgrade `@eslint/js` 10.0.1 to 9.39.5 (breaking).
 - Review again when a new ESLint release updates `minimatch`.
 
-### Gate 2: ABS attribution
+### Gate 2: ABS attribution (Decision: Accepted)
 
-Pending.
+- Checked on 2026-11-02 against the ABS conditions of sale (Creative Commons attribution
+  section): https://www.abs.gov.au/about/legislation-and-policy/purchasing-data/abs-conditions-sale
+- ABS rule: "Source: ABS" is for unchanged material; "Based on ABS data" is for modified or
+  derived material, and the licence terms must be made clear.
+- This product is derived (indicator, hotspots, simplified and masked boundaries), so:
+  "Source:" changed to "Based on"; added "© Commonwealth of Australia" and the CC BY 4.0
+  licence URL; the disclaimer now names the author's own analysis; removed the
+  "(Verify this wording ...)" placeholder.
+- The text is defined once, in ABS_ATTRIBUTION in scripts/export_web.py.
+- check_export_web.py now checks that abs_attribution starts with "Based on", contains
+  "CC BY 4.0" and the licence URL, and has no "verify this wording" placeholder.
+- Re-export result: only run_metadata.json changed; both PMTiles files, sa2_points.geojson
+  and sa2_details.json were byte-identical, so the export is reproducible.
 
 ## Deployment
 
