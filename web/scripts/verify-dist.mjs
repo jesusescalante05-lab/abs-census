@@ -1,5 +1,5 @@
 // Post-build check (ADR-006 "Production bug: MapLibre worker 404"): the
-// maplibre-gl worker file has repeatedly been silently dropped from
+// maplibre-gl worker file was silently dropped from
 // dist/assets/ (Rollup can't statically detect its runtime-computed URL,
 // so nothing emits it unless maplibregl.setWorkerUrl() is wired up in
 // MapView.jsx). A missing worker file does not fail `vite build` -- the

@@ -1,7 +1,7 @@
 # ADR-006: Publishing
 
 **Product:** Perth Housing Stress Explorer
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-11-02
 **Phase:** 7 (Publish to GitHub Pages)
 **Depends on:** ADR-004 (web data packaging), ADR-005 (web app)
@@ -82,7 +82,7 @@ Publishing to GitHub Pages. ADR-005 Limitation 7 set two gates before publishing
   chunk; `import.meta.url` then points at that chunk, and the sibling file was never emitted.
 - **Fix.** `MapView.jsx` imports the worker file with Vite's `?url` suffix
   (`maplibre-gl/dist/maplibre-gl-worker.mjs?url`) and calls `maplibregl.setWorkerUrl(...)`
-  with the result, before any Map is created. `setWorkerUrl` is maplibre-gl's own documented
+  with the result, before any Map is created. `setWorkerUrl` is maplibre-gl's own exported
   override (`config.WORKER_URL`, checked before its broken auto-detection runs). The `?url`
   import makes Rollup emit the file for real and returns a URL already rewritten for the
   configured base, so it needs no separate BASE_URL handling (ADR-005's rule still holds, it's
@@ -101,6 +101,21 @@ Publishing to GitHub Pages. ADR-005 Limitation 7 set two gates before publishing
   2. The "Before pushing" step added to Deployment above: `npm run preview` against the real
      production build, checking the worker request specifically in the Network tab -- a
      file-presence check alone wouldn't catch a build that emits the file at the wrong URL.
+
+## Results
+
+- Live at https://jesusescalante05-lab.github.io/abs-census/ , deployed by
+  .github/workflows/deploy.yml from master; build and deploy jobs pass, including
+  npm run verify:dist.
+- Live browser checklist passed (2026-11-02): .pmtiles requests return HTTP 206; the
+  maplibre-gl worker loads with HTTP 200; no console errors; About page shows the
+  "Based on ABS data" attribution with the CC BY 4.0 link; basemap and both layers
+  render; Mandurah robust hotspot cluster and Claremont (WA) robust coldspot shown and
+  labelled; zoom-to-cluster flies to Mandurah-Peel; Claremont in the highest quintile;
+  Mandurah - North shows the spatial-outlier note; Osborne Park Industrial shows its
+  status explanation; basemap attribution shown.
+- Resolves ADR-005 Limitations 3 (no CI), 5 (npm audit not reviewed), 6 (no deploy
+  workflow) and 7 (publishing gates).
 
 ## Limitations
 
