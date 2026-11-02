@@ -62,8 +62,45 @@ Publishing to GitHub Pages. ADR-005 Limitation 7 set two gates before publishing
   web/public/data/ is based on ABS data under CC BY 4.0 (see Gate 2).
 - About page: no change. It is React state only and changes no URL, so a page refresh
   cannot produce a 404.
+- Before pushing: run `npm run preview` (built with VITE_BASE_PATH=/abs-census/) and check
+  the maplibre-gl worker request in the Network tab.
 - After the first deploy: repeat the ADR-005 browser checklist on the live URL, plus:
   .pmtiles requests return HTTP 206, and the About page shows the new ABS attribution.
+
+## Production bug: MapLibre worker 404
+
+- **Cause.** maplibre-gl computes its worker's filename from a runtime conditional
+  (`import.meta.url.endsWith('-dev.mjs') ? ... : 'maplibre-gl-worker.mjs'`), not a literal
+  string. Rollup's `new URL(url, import.meta.url)` asset detection -- what makes Vite emit a
+  file into dist/assets and rewrite its URL -- only fires for a literal first argument.
+  Confirmed by building with VITE_BASE_PATH=/abs-census/: dist/assets contained the app's own
+  JS and CSS only, no file named maplibre-gl-worker anything. The browser still requests
+  /abs-census/assets/maplibre-gl-worker.mjs?v=6.14.0 at runtime and gets a 404.
+- **ADR-005 bug 2 fixed dev only.** `optimizeDeps.exclude: ["maplibre-gl"]` makes Vite's dev
+  server serve maplibre-gl.mjs straight from node_modules, unbundled -- so the computed
+  sibling path resolves to a real file there. The production build bundles our code into one
+  chunk; `import.meta.url` then points at that chunk, and the sibling file was never emitted.
+- **Fix.** `MapView.jsx` imports the worker file with Vite's `?url` suffix
+  (`maplibre-gl/dist/maplibre-gl-worker.mjs?url`) and calls `maplibregl.setWorkerUrl(...)`
+  with the result, before any Map is created. `setWorkerUrl` is maplibre-gl's own documented
+  override (`config.WORKER_URL`, checked before its broken auto-detection runs). The `?url`
+  import makes Rollup emit the file for real and returns a URL already rewritten for the
+  configured base, so it needs no separate BASE_URL handling (ADR-005's rule still holds, it's
+  just satisfied automatically here).
+- **Self-containment check.** Before relying on copying just this one file,
+  node_modules/maplibre-gl/dist/maplibre-gl-worker.mjs was checked for any static `import`,
+  `new URL(..., import.meta.url)`, or dynamic `import(` of another file in the package: no
+  static imports and no `new URL(...)` at all; two dynamic `import(e)` calls, both inside a
+  generic "load a script from this URL" helper used for maplibre-gl's optional runtime plugin
+  hooks (e.g. `setRTLTextPlugin`, external, not called anywhere in this app) -- not a
+  reference to a sibling dist file. The file is self-contained for this purpose.
+- **New checks.**
+  1. `web/scripts/verify-dist.mjs`, run as `npm run verify:dist`: fails with a clear message
+     if dist/assets has no `maplibre-gl-worker*` file after a build. Wired into
+     .github/workflows/deploy.yml's build job, right after `npm run build`.
+  2. The "Before pushing" step added to Deployment above: `npm run preview` against the real
+     production build, checking the worker request specifically in the Network tab -- a
+     file-presence check alone wouldn't catch a build that emits the file at the wrong URL.
 
 ## Limitations
 

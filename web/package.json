@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "verify:dist": "node scripts/verify-dist.mjs"
   },
   "dependencies": {
     "react": "19.3.1",

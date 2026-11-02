@@ -11,6 +11,15 @@ import {
   SA2_OUTLINE_STYLE,
 } from "../config/mapStyle";
 import { dataUrl } from "../data/useSa2Data";
+// `?url` makes Vite emit this file into dist/assets (base-path-aware, via
+// import.meta.env.BASE_URL) instead of trying to bundle it as JS. Needed
+// because maplibre-gl's own worker-URL auto-detection builds the filename
+// from a runtime conditional, which Rollup can't statically resolve into
+// an emitted asset for the production build -- it only works by accident
+// in dev, where Vite serves node_modules files directly (ADR-006).
+import maplibreGlWorkerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?url";
+
+maplibregl.setWorkerUrl(maplibreGlWorkerUrl);
 
 // pmtiles.Protocol registers the `pmtiles://` URL scheme with MapLibre so
 // it can read a local .pmtiles file directly (HTTP range requests), with
