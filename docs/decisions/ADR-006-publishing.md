@@ -43,4 +43,30 @@ Publishing to GitHub Pages. ADR-005 Limitation 7 set two gates before publishing
 
 ## Deployment
 
-Pending.
+- Host: GitHub Pages, project site https://jesusescalante05-lab.github.io/abs-census/
+  (repo jesusescalante05-lab/abs-census, branch master). Pages source: "GitHub Actions".
+- Node: web/.nvmrc pins 24.16.0 (same as the local machine); the workflow reads it.
+- One workflow, .github/workflows/deploy.yml. Triggers: push to master, pull_request,
+  workflow_dispatch.
+  - Job build: npm ci, npm run lint, npm test, npm audit --omit=dev, then npm run build with
+    VITE_BASE_PATH=/abs-census/, then upload web/dist as the Pages artifact.
+  - Job deploy: only on master (not on pull requests); needs build; publishes the artifact.
+  - Permissions: contents read, pages write, id-token write. Concurrency group "pages",
+    cancel-in-progress false.
+  - Every action is pinned to a full commit SHA, with its version as a comment
+    (same rule as the exact npm versions in ADR-005).
+- Pre-publish secrets check (2026-11-02): the full Git history contains only .env.example with
+  the placeholder PGPASSWORD=changeme. The real .env is ignored by .gitignore (line 2) and was
+  never committed. The commit author email is public by choice.
+- Licence: a LICENSE file with the MIT licence for the code, with a note that the data in
+  web/public/data/ is based on ABS data under CC BY 4.0 (see Gate 2).
+- About page: no change. It is React state only and changes no URL, so a page refresh
+  cannot produce a 404.
+- After the first deploy: repeat the ADR-005 browser checklist on the live URL, plus:
+  .pmtiles requests return HTTP 206, and the About page shows the new ABS attribution.
+
+## Limitations
+
+- The export checks (check_export_web.py) do not run in CI, because the script connects to
+  PostgreSQL first. Data files change only through the local export, which runs the full
+  check (ADR-004). Planned later: an --offline mode for the file-only checks.
