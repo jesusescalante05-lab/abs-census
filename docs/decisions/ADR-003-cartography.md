@@ -2,7 +2,7 @@
 
 **Product:** Perth Housing Stress Explorer
 **Status:** Accepted
-**Date:** 2026-11-04
+**Date:** 2026-10-29
 **Phase:** 4 (Cartography)
 **Depends on:** ADR-001 (indicator), ADR-002 (hotspot confidence classes)
 

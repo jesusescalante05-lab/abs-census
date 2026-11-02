@@ -2,7 +2,7 @@
 
 **Product:** Perth Housing Stress Explorer
 **Status:** Accepted
-**Date:** 2026-11-06
+**Date:** 2026-11-01
 **Phase:** 6 (Web app)
 **Depends on:** ADR-003 (cartography), ADR-004 (web data packaging)
 

@@ -75,7 +75,7 @@ an SA2's location.
 
 ## Amendment 1: main populated part (bug fix)
 
-**Date:** 2026-11-04
+**Date:** 2026-10-30
 
 **What was wrong.** KNN points used a representative point of each SA2's largest polygon part by
 area. For Fremantle, the largest part is Rottnest Island (19.18 km²), larger than any mainland part

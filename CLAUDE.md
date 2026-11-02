@@ -29,3 +29,12 @@ Run from `web/`:
 
 `VITE_BASE_PATH` sets the sub-path for a GitHub Pages build, e.g.
 `VITE_BASE_PATH=/abs-census/ npm run build`.
+
+## ADR dates
+
+- The **Date** of an ADR, and of each amendment, is the day it is first committed to Git.
+  Use today's real date from the system clock (run `date` or `git log -1 --date=short`).
+  Never estimate or guess a date.
+- Check with: `git log --format="%ad %h %s" --date=short -- docs/decisions/`
+- Dates in ADR-002 (Amendment 1), ADR-003, ADR-004 and ADR-005 were corrected on
+  2026-11-01 to follow this rule.
